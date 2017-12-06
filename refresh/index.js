@@ -340,7 +340,7 @@ module.exports = Generator.extend({
       this.itemsToIgnore = []
 
       // Package dependencies to add to Package.swift
-      // eg this.dependencies.push('.package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from : "1.7.0")),')
+      // eg this.dependencies.push('.package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from : "2.0.0")),')
       this.dependencies = []
 
       // Module Dependencies to add to Package.swift
@@ -844,7 +844,7 @@ module.exports = Generator.extend({
     if (this.healthcheck) {
       this.modules.push('"Health"')
       endpointNames.push('Health')
-      this.dependencies.push('.package(url: "https://github.com/IBM-Swift/Health.git", from: "0.0.0"),')
+      this.dependencies.push('.package(url: "https://github.com/IBM-Swift/Health.git", from: "1.0.0"),')
     }
 
     var initCodeForEndpoints = endpointNames.map(name => `initialize${name}Routes(app: self)`)
